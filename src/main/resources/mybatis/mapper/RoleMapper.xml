@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.live.user.mapper.RoleMapper">
+  <!--
+    自定义mapper
+  -->
+
+  <!-- 获取用户角色-->
+  <select id="findRoleByUid" parameterType="Integer"  resultType="Role">
+	SELECT role_id,role_name,role_type from user_role urole left join role on urole.rid = role.role_id where urole.uid = #{0}
+</select>
+
+</mapper>
