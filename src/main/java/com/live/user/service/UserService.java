@@ -1,11 +1,11 @@
 package com.live.user.service;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.github.pagehelper.PageInfo;
 import com.live.user.model.User;
 
-import java.util.List;
+import java.util.Date;
 
 public interface UserService {
     User queryUserInfo (String username);
+
+    int updateUserLastLoginTime(String loginName, Date userLastLoginTime);
 }
