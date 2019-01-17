@@ -23,11 +23,11 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
         //解决跨域
-        String origin = httpServletRequest.getHeader("Origin");
-        httpServletResponse.setHeader("Access-Control-Allow-Origin", origin);
-        httpServletResponse.setHeader("Access-Control-Allow-Methods", "*");
-        httpServletResponse.setHeader("Access-Control-Allow-Headers", "Origin,Content-Type,Accept,token,X-Requested-With");
-        httpServletResponse.setHeader("Access-Control-Allow-Credentials", "true");
+//        String origin = httpServletRequest.getHeader("Origin");
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin","http://localhost:3000");
+//        httpServletResponse.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE");
+//        httpServletResponse.setHeader("Access-Control-Allow-Headers", "Origin,Content-Type,Accept,token,X-Requested-With");
+//        httpServletResponse.setHeader("Access-Control-Allow-Credentials", "true");
         String token = httpServletRequest.getHeader("x-auth-token");// 从 http 请求头中取出 token
         // 如果不是映射到方法直接通过
         if (!(object instanceof HandlerMethod)) {
